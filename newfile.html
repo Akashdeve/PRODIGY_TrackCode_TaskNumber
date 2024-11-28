@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProDigy Infotech Navigation</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(to right, #1e3c72, #2a5298); /* Blue gradient */
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    .navbar.scrolled {
+      background: #142850; /* Darker shade when scrolled */
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .menu {
+      display: flex;
+      list-style: none;
+    }
+
+    .menu li {
+      margin: 0 10px;
+    }
+
+    .menu li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 5px 10px;
+      transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .menu li a:hover {
+      color: #1e3c72;
+      background: #fff;
+      border-radius: 5px;
+    }
+
+    /* Content Sections */
+    .section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    /* Colors for sections */
+    #home { background: #e3f2fd; }
+    #about { background: #bbdefb; }
+    #services { background: #90caf9; }
+    #portfolio { background: #64b5f6; }
+    #contact { background: #42a5f5; }
+  </style>
+</head>
+<body>
+  <!-- Navigation Menu -->
+  <nav class="navbar">
+    <div class="logo">ProDigy Infotech</div>
+    <ul class="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Content Sections -->
+  <section id="home" class="section">Welcome to ProDigy Infotech</section>
+  <section id="about" class="section">About Us</section>
+  <section id="services" class="section">Our Services</section>
+  <section id="portfolio" class="section">Our Portfolio</section>
+  <section id="contact" class="section">Contact Us</section>
+
+  <script>
+    // Select the navigation bar
+    const navbar = document.querySelector('.navbar');
+
+    // Add a scroll event listener
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
